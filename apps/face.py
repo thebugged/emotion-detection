@@ -66,7 +66,7 @@ def face_page():
         stframe = st.empty()
 
         if use_webcam:
-            vid = cv2.VideoCapture(1)
+            vid = cv2.VideoCapture(-1)
             codec = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
             out = cv2.VideoWriter('misc/output1.mp4', codec, 30, (640, 480))
 
