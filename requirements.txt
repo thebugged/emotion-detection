@@ -12,3 +12,4 @@ streamlit==1.30.0
 streamlit-audiorecorder==0.0.4
 streamlit-option-menu==0.3.12
 tensorflow==2.15.0
+libgl1-mesa-glx
