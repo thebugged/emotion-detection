@@ -66,7 +66,7 @@ def face_page():
         stframe = st.empty()
 
         if use_webcam:
-            vid = cv2.VideoCapture(0)
+            vid = cv2.VideoCapture(1)
             codec = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
             out = cv2.VideoWriter('misc/output1.mp4', codec, 30, (640, 480))
 
@@ -112,13 +112,13 @@ def face_page():
             if video_file_buffer is not None:
                 tfflie = tempfile.NamedTemporaryFile(delete=False)
                 tfflie.write(video_file_buffer.read())
-                vid2 = cv2.VideoCapture(tfflie.name)
+                vid = cv2.VideoCapture(tfflie.name)
 
-                codec2 = cv2.VideoWriter_fourcc('V', 'P', '0', '9')
-                out2 = cv2.VideoWriter('misc/output2.mp4', codec2, 30, (640, 480))
+                codec = cv2.VideoWriter_fourcc('v', 'p', '0', '9')
+                out = cv2.VideoWriter('misc/output2.mp4', codec, 30, (640, 480))
 
-                while vid2.isOpened():
-                    ret, frame = vid2.read()
+                while vid.isOpened():
+                    ret, frame = vid.read()
                     if not ret:
                         break
 
@@ -140,19 +140,19 @@ def face_page():
                             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 255), 2)
                             cv2.putText(frame, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
-                    out2.write(frame)
+                    out.write(frame)
 
                     frame = cv2.resize(frame, (0, 0), fx=0.8, fy=0.8)
                     frame = cv2.resize(frame, (640, 480))
                     stframe.image(frame, channels='BGR', use_column_width=True)
 
                     if stop:
-                        vid2.release()
-                        out2.release()
+                        vid.release()
+                        out.release()
                         break
 
-                vid2.release()
-                out2.release()
+                vid.release()
+                out.release()
             else:
                 st.warning('Please upload a video.')
 
