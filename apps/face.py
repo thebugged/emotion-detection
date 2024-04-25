@@ -67,7 +67,7 @@ def face_page():
 
         if use_webcam:
             vid = cv2.VideoCapture(0)
-            codec = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
+            codec = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
             out = cv2.VideoWriter('misc/output1.mp4', codec, 30, (640, 480))
 
             while True:
