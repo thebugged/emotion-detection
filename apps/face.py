@@ -5,6 +5,7 @@ import tensorflow as tf
 import streamlit as st
 
 from PIL import Image
+from pathlib import Path
 from keras.preprocessing.image import img_to_array
 
 def face_page():
