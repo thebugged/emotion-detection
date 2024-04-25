@@ -16,7 +16,7 @@
   <h3 align="center">Emotion Detection</h3>
 
    <div align="center">
-     Either Neutral, Calm, Happy, Sad, Anger, Fear, Disgust, or Surprise, the app detects the emotion from either uploads of an Image or Video or in real-time processing. 
+     Either Neutral, Calm, Happy, Sad, Anger, Fear, Disgust, or Surprise, the app detects the emotion from either uploads of an image or video or in real-time processing. 
     </div>
 </div>
 <br/>
