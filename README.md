@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="" target="_blank">
-      <img src="https://github.com/thebugged/emotion-detection/assets/74977495/463b59e0-0a91-4bbf-866a-c0dc635abf5d)" alt="Banner">
+      <img src="https://github.com/thebugged/emotion-detection/assets/74977495/340fcd9b-50b7-4581-b9bc-2e2a1239aae4" alt="Banner">
     </a>
   <br />
 
