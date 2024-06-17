@@ -16,7 +16,7 @@
   <h3 align="center">Emotion Detection</h3>
 
    <div align="center">
-     Either Neutral, Calm, Happy, Sad, Anger, Fear, Disgust, or Surprise, the app detects the emotion from either uploads of an audio, image, video or in real-time processing. 
+     This application detects most common emotions from either uploads of an audio, image, video or through real-time processing. 
     </div>
 </div>
 <br/>
@@ -33,6 +33,7 @@
 Ensure the following are installed
 - [Git](https://git-scm.com/)
 - [Python](https://www.python.org/downloads/)
+- [FFmpeg](https://ffmpeg.org/)
 - [Jupter Notebook](https://jupyter.org/install) (or install the Jupyter extension on Visual Studio Code).
   
 To set up this project locally, follow these steps:
@@ -58,8 +59,10 @@ pip install -r requirements.txt
 ```shell
 streamlit run main.py
 ```
-2. Alternatively, you can run the `face.ipynb` and `speech.ipynb` notebooks to get their respective models then run the command in 1.
+2. Alternatively, you can run the `face.ipynb` and `audio.ipynb` notebooks to get their respective models then run the command in 1.
 
 The application will be available in your browser at http://localhost:8501.
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](emotion--detection.streamlit.app)
 
 

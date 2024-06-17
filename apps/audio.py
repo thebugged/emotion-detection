@@ -5,7 +5,9 @@ import streamlit as st
 import tensorflow as tf
 import noisereduce as nr
 
-from audiorecorder import audiorecorder
+from st_audiorec import st_audiorec
+
+from streamlit_option_menu import option_menu
 
 def preprocess_audio(audio_path, target_frames=400):
     x, sr = librosa.load(audio_path, sr=None)
@@ -26,7 +28,7 @@ def preprocess_audio(audio_path, target_frames=400):
     X_3D = np.expand_dims(X_padded, axis=0)
     return X_3D
 
-def speech_page():
+def audio_page():
     saved_model_path = 'models/smodel.json'
     saved_weights_path = 'models/smodel_weights.h5'
 
@@ -38,28 +40,19 @@ def speech_page():
 
     class_labels = ['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful', 'disgust', 'surprised']
     
+    st.caption("switch between facial & audio detection from sidebar ⬅️")
+    selected_page = option_menu(
+            menu_title = None,
+            options = ["Audio Upload", "Audio Recording"],
+            icons=['file-earmark-music', 'record-circle'],
+            orientation="horizontal",
+        )
+    
 
-    option = st.selectbox("Choose an option:", ("Record Audio", "Upload Audio"))
+    
 
-    if option == "Record Audio":
-        st.warning("Click the 'Start Recording' button to begin recording audio.")
-
-        audio = audiorecorder("Start recording", "Stop recording")
-
-        if len(audio) > 0:
-        
-            audio.export("misc/output.wav", format="wav")
-
-            st.audio(audio.export().read(), format="audio/wav")
-
-            audio_features = preprocess_audio("misc/output.wav")
-            prediction = model.predict(audio_features)
-            predicted_class = class_labels[np.argmax(prediction)]
-
-            st.write("Predicted Emotion:", predicted_class)
-
-    elif option == "Upload Audio":
-        # Only works with WAV files
+    if selected_page == "Audio Upload":
+        st.caption("sample [audio](https://pixabay.com/sound-effects/)")
         file = st.file_uploader("Upload a WAV audio file", type=["wav"])
 
         if file is not None:
@@ -76,5 +69,20 @@ def speech_page():
 
             st.write("Predicted Emotion:", predicted_class)
 
+
+    if selected_page == "Audio Recording":
+        st.warning("Click the 'Start Recording' button to begin recording audio.")
+
+        wav_audio_data = st_audiorec()
+        st.divider()
+
+        if wav_audio_data is not None:
+            st.audio(wav_audio_data, format='audio/wav')
+
+            audio_features = preprocess_audio("misc/output.wav")
+            prediction = model.predict(audio_features)
+            predicted_class = class_labels[np.argmax(prediction)]
+            st.write("Predicted Emotion:", predicted_class)
+
 if __name__ == "__main__":
-    speech_page()
+    audio_page()
