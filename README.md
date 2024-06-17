@@ -34,7 +34,7 @@ Ensure the following are installed
 - [Git](https://git-scm.com/)
 - [Python](https://www.python.org/downloads/)
 - [FFmpeg](https://ffmpeg.org/)
-- [Jupter Notebook](https://jupyter.org/install) (or install the Jupyter extension on Visual Studio Code).
+- [Jupter Notebook](https://jupyter.org/install) (or install the Jupyter extension on [Visual Studio Code](https://code.visualstudio.com/)).
   
 To set up this project locally, follow these steps:
 
