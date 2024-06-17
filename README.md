@@ -16,7 +16,7 @@
   <h3 align="center">Emotion Detection</h3>
 
    <div align="center">
-     This application detects most common emotions from either uploads of an audio, image, video or through real-time processing. 
+     This application detects emotions from either uploads of an audio, image, video or through real-time processing. 
     </div>
 </div>
 <br/>
