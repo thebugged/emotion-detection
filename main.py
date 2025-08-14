@@ -11,9 +11,9 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(
     page_title="Emotions",
-    page_icon="😑",
+    page_icon="😁",
     layout="centered",
-    initial_sidebar_state="auto",
+    initial_sidebar_state="expanded",
   )
 
 pages = {
@@ -25,7 +25,7 @@ pages = {
 with st.sidebar:
     
     st.title("Emotions 😑 😁 😭")
-    st.sidebar.markdown("---")
+    st.sidebar.markdown("")
 
     selected_page = option_menu(
             menu_title = None,
@@ -33,8 +33,6 @@ with st.sidebar:
             icons=['person', 'filetype-wav'],
             orientation="vertical",
         )
-    st.sidebar.markdown("---")
-    st.sidebar.markdown("👨🏾‍💻 by [thebugged](https://github.com/thebugged)")
 
 
 if selected_page in pages:

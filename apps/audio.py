@@ -40,7 +40,7 @@ def audio_page():
 
     class_labels = ['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful', 'disgust', 'surprised']
     
-    st.caption("switch between facial & audio detection from sidebar ⬅️")
+    st.caption("Switch between facial & audio detection from sidebar ←")
     selected_page = option_menu(
             menu_title = None,
             options = ["Audio Upload", "Audio Recording"],
@@ -52,7 +52,7 @@ def audio_page():
     
 
     if selected_page == "Audio Upload":
-        st.caption("sample [audio](https://pixabay.com/sound-effects/)")
+        st.caption("Sample [audio](https://pixabay.com/sound-effects/)")
         file = st.file_uploader("Upload a WAV audio file", type=["wav"])
 
         if file is not None:
