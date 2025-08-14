@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://emotion--detection.streamlit.app" target="_blank">
-      <img src="https://github.com/thebugged/emotion-detection/assets/74977495/a3ff9d3f-581d-45d8-8209-2e39d707f045" alt="Banner">
+      <img src="https://github.com/user-attachments/assets/b644a6dc-aea0-41bc-ab5d-5e19275e6def" alt="Banner">
     </a>
   <br />
 
